@@ -10,5 +10,17 @@
 }
 
 body {
-    background-color: grey;
+    background-color: silver;
+}
+
+.grid-container {
+    width: 920px;
+}
+
+.grid-row {
+    display: flex;
+}
+
+.grid-box {
+    border: 1px solid black;
 }
