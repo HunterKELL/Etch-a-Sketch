@@ -1,5 +1,5 @@
 :root {
-    --grid-columns: 1;
+    --grid-cols: 1;
     --grid-rows: 1;
 }
 
@@ -7,4 +7,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: grey;
 }
