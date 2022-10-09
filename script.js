@@ -1,8 +1,11 @@
-const container = document.getElementById('container');
-//const boxOnGrid = document.querySelectorAll('grid-box');
-//const buttonColors = document.querySelectorAll('.color-choice');
+//const boxOnGrid = document.querySelectorAll('.grid-box');
+//console.log(boxOnGrid);
+const buttonColors = document.querySelectorAll('.color-choice');
+console.log(buttonColors)
 const gridRow = document.querySelector('.grid-row');
-const sizeOfGrid = 29;
+const orangeButton = document.getElementById('orange');
+
+const sizeOfGrid = 16;
 
 //Grid Creation
 const createGrid = (gridSize) => {
@@ -28,36 +31,65 @@ const createGrid = (gridSize) => {
 
 };
 
-createGrid(sizeOfGrid);
+//createGrid(sizeOfGrid);
 
-const boxOnGrid = document.querySelectorAll('.grid-box');
+/*const boxOnGrid = document.querySelectorAll('.grid-box');
+console.log(boxOnGrid);
 boxOnGrid.forEach(box => {
     box.addEventListener('mouseover', () => {
         box.style.backgroundColor = 'black';
     });
-});
-
-
+});*/ 
 
 /*const colorCreate = (name, color) => {
     const boxOnGrid = document.querySelectorAll('.grid-box');
-    boxOnGrid.forEach((box) => {
-        if (name === 'black') {
-            box.addEventListener('mouseenter', (e) => {
-                e.target.style.backgroundColor = color;
-            });
-        };
-    });
-};
+    console.log(boxOnGrid);
+    boxOnGrid.forEach(box => {
+        box.addEventListener('mouseover', () => {
+            box.style.backgorundColor = 'black';
+        })
+    })
+}*/
+const colorCreate = (name, color) => {
 
-/*const colorChoice = () => {
-    const buttonColors = document.querySelectorAll('.color-choice');
+}
+
+
+const colorChoice = () => {
     buttonColors.forEach((button) => {
         button.addEventListener('click', () => {
             if (button.classList.contains('black')) {
                 buttonColors[0].classList.add('active');
-                generateColor('black', '#000000');
-            };
+                colorCreate('black', '#000000');
+                const boxOnGrid = document.querySelectorAll('.grid-box');
+                console.log(boxOnGrid)
+                boxOnGrid.forEach((box) => {
+                    box.addEventListener('mouseover', () => {
+                        box.style.backgroundColor = 'black';
+                    })
+                }) 
+                
+            } else if (button.classList.contains('orange')) {
+                buttonColors[1].classList.add('active');
+                colorCreate('orange', '#ffa31a');
+                const boxOnGrid = document.querySelectorAll('.grid-box');
+                console.log(boxOnGrid)
+                boxOnGrid.forEach((box) => {
+                    box.addEventListener('mouseover', () => {
+                        box.style.backgroundColor = 'orange';
+                    })
+                }) 
+            }
         });
     });
-}; */
+};
+
+colorChoice();
+
+createGrid(sizeOfGrid);
+
+/*const boxOnGrid = document.querySelectorAll('.grid-box');
+console.log(boxOnGrid);
+boxOnGrid.forEach(box => {
+    box.addEventListener('mouseover', (colorChoice));
+}); */
