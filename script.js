@@ -50,35 +50,49 @@ boxOnGrid.forEach(box => {
         })
     })
 }*/
-const colorCreate = (name, color) => {
 
+const randomColor = () => {
+    const hexDecimals = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += hexDecimals[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
-
 
 const colorChoice = () => {
     buttonColors.forEach((button) => {
         button.addEventListener('click', () => {
             if (button.classList.contains('black')) {
                 buttonColors[0].classList.add('active');
-                colorCreate('black', '#000000');
+                //colorCreate('black', '#000000');
                 const boxOnGrid = document.querySelectorAll('.grid-box');
                 console.log(boxOnGrid)
                 boxOnGrid.forEach((box) => {
                     box.addEventListener('mouseover', () => {
                         box.style.backgroundColor = 'black';
                     })
-                }) 
+                });
                 
             } else if (button.classList.contains('orange')) {
                 buttonColors[1].classList.add('active');
-                colorCreate('orange', '#ffa31a');
+                //colorCreate('orange', '#ffa31a');
                 const boxOnGrid = document.querySelectorAll('.grid-box');
                 console.log(boxOnGrid)
                 boxOnGrid.forEach((box) => {
                     box.addEventListener('mouseover', () => {
                         box.style.backgroundColor = 'orange';
-                    })
-                }) 
+                    });
+                }); 
+            } else if (button.classList.contains('random')) {
+                buttonColors[2].classList.add('active');
+                const boxOnGrid = document.querySelectorAll('.grid-box');
+                console.log(boxOnGrid);
+                boxOnGrid.forEach((box) => {
+                    box.addEventListener('mouseover', () => {
+                        box.style.backgroundColor = randomColor();
+                    });
+                })
             }
         });
     });
