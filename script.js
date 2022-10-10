@@ -3,7 +3,7 @@
 const buttonColors = document.querySelectorAll('.color-choice');
 console.log(buttonColors)
 const gridRow = document.querySelector('.grid-row');
-const orangeButton = document.getElementById('orange');
+const clearButton = document.getElementById('reset');
 
 const sizeOfGrid = 16;
 
@@ -21,9 +21,13 @@ const createGrid = (gridSize) => {
             // dynamically change grid box
             gridBox.style.width = `${widthAndHeight}px`;
             gridBox.style.height = `${widthAndHeight}px`;
-            //gridBox.addEventListener('mouseover', (e) => {
-                //e.target.style.backgroundColor ='black';
-           // });
+            
+            clearButton.addEventListener('click', () => {
+                const boxOnGrid = document.querySelectorAll('.grid-box');
+                boxOnGrid.forEach((box) => {
+                    box.style.backgroundColor = 'white';
+                });
+           });
         };
 
         container.appendChild(row);
@@ -97,6 +101,8 @@ const colorChoice = () => {
         });
     });
 };
+
+
 
 colorChoice();
 
