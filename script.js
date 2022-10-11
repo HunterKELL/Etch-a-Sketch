@@ -4,9 +4,31 @@ const buttonColors = document.querySelectorAll('.color-choice');
 console.log(buttonColors)
 const gridRow = document.querySelector('.grid-row');
 const clearButton = document.getElementById('reset');
+const sixteenButton = document.getElementsByClassName('sixteen');
+console.log(sixteenButton);
+const thirytTwoButton = document.getElementsByClassName('thirty-two');
+console.log(thirytTwoButton);
+const fortyEightButton = document.getElementsByClassName('forty-eight');
+const sixtyFourButton = document.getElementsByClassName('sixty-four');
+const sizeButtons = document.querySelectorAll('.size-button');
+//console.log(sizeButtons);
 
-const sizeOfGrid = 16;
+let gridSize = 16;
 
+/*const numForGrid = (size) => {
+    let sizeOfGrid = size;
+    //gridChange(sizeOfGrid);
+    if(size === 16) {
+        sizeOfGrid = 16;
+    } else if (size === 32) {
+        sizeOfGrid = 32;
+    } else if (size === 48) {
+        sizeOfGrid = 48;
+    } else if (size === 64) {
+        sizeOfGrid = 64;
+    }
+     createGrid(sizeOfGrid);
+}*/
 //Grid Creation
 const createGrid = (gridSize) => {
     for (let i = 0; i < gridSize; i++) {
@@ -14,7 +36,7 @@ const createGrid = (gridSize) => {
         row.classList.add('grid-row');
 
         for (let j = 0; j < gridSize; j++) {
-            const widthAndHeight = 920 / sizeOfGrid;
+            const widthAndHeight = 920 / gridSize;
             const gridBox = document.createElement('div');
             gridBox.classList.add('grid-box');
             row.appendChild(gridBox);
@@ -35,6 +57,58 @@ const createGrid = (gridSize) => {
 
 };
 
+/*const gridChange = (size) => {
+    if (sixteenButton.addEventListener('click')) {
+        size = 16;
+    } else if (thirytTwoButton.addEventListener('click')) {
+        size = 32;
+    } else if (fortyEightButton.addEventListener('click')) {
+        size = 48;
+    } else if (sixtyFourButton.addEventListener('click')) {
+        size = 64;
+    }
+    return size;
+}
+gridChange(sizeOfGrid);*/
+
+/*const gridChange = () => {
+    for (let box of boxOnGrid) {
+        box.remove()
+    }
+    sizeOfGrid = ;
+    createGrid(gridSize);
+    boxOnGrid.document.querySelectorAll('.grid-box');
+}*/
+
+const gridChange = () => {
+   // let sizeOfGrid = size;
+    sizeButtons.forEach((button) => {
+        //console.log(sizeButtons);
+        button.addEventListener('click', () => {
+            if (button.classList.contains('sixteen')) {
+                //sizeButtons[0].classList.add('active');
+                createGrid(16);
+            } else if (button.classList.contains('thirty-two')) {
+                //sizeButtons[1].classList.add('active');
+                createGrid(32);
+            } else if (button.classList.contains('forty-eight')) {
+                //sizeButtons[2].classList.add('active');
+                createGrid(48);
+            } else if (button.classList.contains('sixty-four')) {
+                //sizeButtons[3].classList.add('active');
+                createGrid(64);
+            }
+        }) 
+    }) 
+} 
+gridChange();
+console.log(gridChange)
+
+const refresh = () => {
+    window.location.reload;
+}
+
+//gridChange();
 //createGrid(sizeOfGrid);
 
 /*const boxOnGrid = document.querySelectorAll('.grid-box');
@@ -62,7 +136,7 @@ const randomColor = () => {
         color += hexDecimals[Math.floor(Math.random() * 16)];
     }
     return color;
-}
+};
 
 const colorChoice = () => {
     buttonColors.forEach((button) => {
@@ -106,7 +180,7 @@ const colorChoice = () => {
 
 colorChoice();
 
-createGrid(sizeOfGrid);
+createGrid(gridSize);
 
 /*const boxOnGrid = document.querySelectorAll('.grid-box');
 console.log(boxOnGrid);
