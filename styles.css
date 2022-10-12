@@ -1,8 +1,9 @@
 :root {
     --bg-color: rgb(207, 169, 126);
     --grid-color: white;
-    --gradient-color: linear-gradient(0deg, rgba(251,194,0,1) 1%, rgba(173,158,17,1) 99%);
-    --gradient-color2: linear-gradient(to right, rgba(251,194,0,1) 5%, rgba(173,158,17,1) 100%);
+    --gradient-color: linear-gradient(0deg, rgb(110, 112, 236) 1%, rgb(164, 82, 219) 99%);
+    --gradient-color2: linear-gradient(to right, rgb(0, 180, 251) 5%, rgb(2, 238, 255) 100%);
+   /* --gradient-color3 : linear-gradient(to right, rgba(251,194,0,1) 5%, rgba(173,158,17,1) 100%); */
 }
 
 * {
@@ -12,7 +13,10 @@
 }
 
 body {
+    background: url(./images/8351209.gif);
+    background-size: cover;
     background-color: var(--bg-color);
+    height: 100vh;
 }
 
 /* Title */
@@ -21,7 +25,7 @@ body {
 }
 
 .title-header {
-    margin: 1.5rem;
+    margin: 2.5rem;
     font-size: 60px;
 }
 
@@ -30,8 +34,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2.5rem;
-    transform: scale(0.7);
+    margin: 0.5rem;
+    transform: scale(0.8);
 }
 
 .grid-container {
@@ -69,7 +73,7 @@ body {
 }
 
 .color-choice:hover, .reset-color:hover {
-    background: linear-gradient(to right, rgba(251,194,0,1) 5%, rgba(173,158,17,1) 100%);
+    background: var(--gradient-color2);
     background-color: yellow;
 }
 
@@ -90,7 +94,7 @@ body {
 }
 
 .size-button:hover {
-    background: linear-gradient(to right, rgba(251,194,0,1) 5%, rgba(173,158,17,1) 100%);
+    background: var(--gradient-color2);
     background-color: yellow;
 }
 
