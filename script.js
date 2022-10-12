@@ -1,36 +1,25 @@
 //const boxOnGrid = document.querySelectorAll('.grid-box');
 //console.log(boxOnGrid);
+const secondContainer = document.querySelectorAll('.secondContainer');
 const buttonColors = document.querySelectorAll('.color-choice');
 console.log(buttonColors)
 const gridRow = document.querySelector('.grid-row');
 const clearButton = document.getElementById('reset');
-const sixteenButton = document.getElementsByClassName('sixteen');
-console.log(sixteenButton);
-const thirytTwoButton = document.getElementsByClassName('thirty-two');
-console.log(thirytTwoButton);
-const fortyEightButton = document.getElementsByClassName('forty-eight');
-const sixtyFourButton = document.getElementsByClassName('sixty-four');
+//const sixteenButton = document.getElementsByClassName('sixteen');
+//const thirytTwoButton = document.getElementsByClassName('thirty-two');
+//console.log(thirytTwoButton);
+//const fortyEightButton = document.getElementsByClassName('forty-eight');
+//const sixtyFourButton = document.getElementsByClassName('sixty-four');
 const sizeButtons = document.querySelectorAll('.size-button');
 //console.log(sizeButtons);
 
 let gridSize = 16;
 
-/*const numForGrid = (size) => {
-    let sizeOfGrid = size;
-    //gridChange(sizeOfGrid);
-    if(size === 16) {
-        sizeOfGrid = 16;
-    } else if (size === 32) {
-        sizeOfGrid = 32;
-    } else if (size === 48) {
-        sizeOfGrid = 48;
-    } else if (size === 64) {
-        sizeOfGrid = 64;
-    }
-     createGrid(sizeOfGrid);
-}*/
 //Grid Creation
 const createGrid = (gridSize) => {
+    //const anotherContainer = document.createElement('div');
+    //anotherContainer.classList.add('secondContainer');
+
     for (let i = 0; i < gridSize; i++) {
         const row = document.createElement('div');
         row.classList.add('grid-row');
@@ -54,6 +43,8 @@ const createGrid = (gridSize) => {
 
         container.appendChild(row);
     };
+    //container.appendChild(anotherContainer);
+    
 
 };
 
@@ -87,25 +78,34 @@ const gridChange = () => {
         button.addEventListener('click', () => {
             if (button.classList.contains('sixteen')) {
                 //sizeButtons[0].classList.add('active');
+                removeElement();
                 createGrid(16);
             } else if (button.classList.contains('thirty-two')) {
                 //sizeButtons[1].classList.add('active');
+                removeElement();
                 createGrid(32);
             } else if (button.classList.contains('forty-eight')) {
                 //sizeButtons[2].classList.add('active');
+                removeElement();
                 createGrid(48);
             } else if (button.classList.contains('sixty-four')) {
                 //sizeButtons[3].classList.add('active');
+                removeElement();
                 createGrid(64);
             }
         }) 
     }) 
 } 
-gridChange();
+
 console.log(gridChange)
 
-const refresh = () => {
+/*const refresh = () => {
     window.location.reload;
+    removeElement()  
+}*/
+
+const removeElement = () => {
+    container.innerHTML = '';
 }
 
 //gridChange();
@@ -177,10 +177,10 @@ const colorChoice = () => {
 };
 
 
-
+gridChange();
 colorChoice();
-
 createGrid(gridSize);
+
 
 /*const boxOnGrid = document.querySelectorAll('.grid-box');
 console.log(boxOnGrid);
