@@ -78,7 +78,7 @@ const colorChoice = () => {
                 buttonColors[0].classList.add('active');
                 const boxOnGrid = document.querySelectorAll('.grid-box');
                 boxOnGrid.forEach((box) => {
-                    box.addEventListener('mouseover', () => {
+                    box.addEventListener('mousedown', () => {
                         box.style.backgroundColor = 'black';
                     })
                 });
@@ -87,7 +87,7 @@ const colorChoice = () => {
                 buttonColors[1].classList.add('active');
                 const boxOnGrid = document.querySelectorAll('.grid-box');
                 boxOnGrid.forEach((box) => {
-                    box.addEventListener('mouseover', () => {
+                    box.addEventListener('mousedown', () => {
                         box.style.backgroundColor = 'orange';
                     });
                 }); 
@@ -95,7 +95,7 @@ const colorChoice = () => {
                 buttonColors[2].classList.add('active');
                 const boxOnGrid = document.querySelectorAll('.grid-box');
                 boxOnGrid.forEach((box) => {
-                    box.addEventListener('mouseover', () => {
+                    box.addEventListener('mousedown', () => {
                         box.style.backgroundColor = randomColor();
                     });
                 });
@@ -103,7 +103,6 @@ const colorChoice = () => {
         });
     });
 };
-
 
 gridChange();
 colorChoice();
