@@ -34,6 +34,7 @@ const createGrid = (gridSize) => {
 
 };
 
+// Change grid sizes using buttons
 const gridChange = () => {
     sizeButtons.forEach((button) => {
         button.addEventListener('click', () => {
@@ -54,14 +55,12 @@ const gridChange = () => {
     });
 }; 
 
-/*const refresh = () => {
-    window.location.reload;  
-}*/
-
+// For removing grid container prior to changing. Prevents from creating a duplicate div container
 const removeElement = () => {
     container.innerHTML = '';
-}
+};
 
+// Uses hex color codes to create a random color. Used by colorChoice function
 const randomColor = () => {
     const hexDecimals = '0123456789ABCDEF';
     let color = '#';
@@ -71,6 +70,7 @@ const randomColor = () => {
     return color;
 };
 
+// Color choices using buttons
 const colorChoice = () => {
     buttonColors.forEach((button) => {
         button.addEventListener('click', () => {
@@ -82,7 +82,6 @@ const colorChoice = () => {
                         box.style.backgroundColor = 'black';
                     })
                 });
-                
             } else if (button.classList.contains('orange')) {
                 buttonColors[1].classList.add('active');
                 const boxOnGrid = document.querySelectorAll('.grid-box');
