@@ -7,7 +7,6 @@
     --gradient-color2: linear-gradient(to right, rgb(0, 180, 251) 5%, rgb(2, 238, 255) 100%);
     --text-color: rgb(164, 82, 219);
     --border-color: rgb(110, 112, 236);
-   /* --gradient-color3 : linear-gradient(to right, rgba(251,194,0,1) 5%, rgba(173,158,17,1) 100%); */
 }
 
 * {
@@ -72,7 +71,6 @@ body {
 .grid-container {
     width: 920px;
     background-color: var(--grid-color);
-    /*box-shadow: 5px 5px 5px 5px black;*/
 }
 
 .grid-row {
